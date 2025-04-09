@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .values.nameOverride | default (include "testingprojectHelm.fullname" .) }}
+  name: {{ .Values.nameOverride | default (include "testingprojectHelm.fullname" .) }}
   labels:
     {{- include "testingprojectHelm.labels" . | nindent 4 }}
 spec:
