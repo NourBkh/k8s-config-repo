@@ -37,4 +37,3 @@ spec:
         image: nourbkh/testingprojectbackend:latest
         ports:
         - containerPort: 5000
-
