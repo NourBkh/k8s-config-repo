@@ -1,0 +1,151 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  creationTimestamp: "2025-04-14T10:54:34Z"
+  generation: 17
+  name: frontend-release
+  namespace: argocd
+  resourceVersion: "208838"
+  uid: 395a5f89-e03e-40c3-8404-6f48beefbd44
+spec:
+  destination:
+    namespace: helmdeployment
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    helm:
+      valueFiles:
+      - values-frontend.yaml
+    path: helmTestingP/testingprojectHelm
+    repoURL: https://github.com/NourBkh/k8s-config-repo.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
+status:
+  conditions:
+  - lastTransitionTime: "2025-04-14T10:55:23Z"
+    message: Namespace/helmdeployment is part of applications argocd/frontend-release
+      and backend-release
+    type: SharedResourceWarning
+  controllerNamespace: argocd
+  health:
+    lastTransitionTime: "2025-04-14T11:04:39Z"
+    status: Degraded
+  history:
+  - deployStartedAt: "2025-04-14T10:54:35Z"
+    deployedAt: "2025-04-14T10:54:38Z"
+    id: 0
+    initiatedBy:
+      automated: true
+    revision: a6272cec9eebe011fc52c2eaacb701ab21187d88
+    source:
+      helm:
+        valueFiles:
+        - values-frontend.yaml
+      path: helmTestingP/testingprojectHelm
+      repoURL: https://github.com/NourBkh/k8s-config-repo.git
+      targetRevision: HEAD
+  operationState:
+    finishedAt: "2025-04-14T10:54:38Z"
+    message: successfully synced (all tasks run)
+    operation:
+      initiatedBy:
+        automated: true
+      retry:
+        limit: 5
+      sync:
+        revision: a6272cec9eebe011fc52c2eaacb701ab21187d88
+    phase: Succeeded
+    startedAt: "2025-04-14T10:54:35Z"
+    syncResult:
+      resources:
+      - group: ""
+        hookPhase: Running
+        kind: Namespace
+        message: namespace/helmdeployment created
+        name: helmdeployment
+        namespace: helmdeployment
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: ""
+        hookPhase: Running
+        kind: ServiceAccount
+        message: serviceaccount/frontend-release created
+        name: frontend-release
+        namespace: helmdeployment
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: ""
+        hookPhase: Running
+        kind: Service
+        message: service/frontend-release created
+        name: frontend-release
+        namespace: helmdeployment
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: apps
+        hookPhase: Running
+        kind: Deployment
+        message: deployment.apps/frontend created
+        name: frontend
+        namespace: helmdeployment
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      revision: a6272cec9eebe011fc52c2eaacb701ab21187d88
+      source:
+        helm:
+          valueFiles:
+          - values-frontend.yaml
+        path: helmTestingP/testingprojectHelm
+        repoURL: https://github.com/NourBkh/k8s-config-repo.git
+        targetRevision: HEAD
+  reconciledAt: "2025-04-14T11:05:22Z"
+  resources:
+  - kind: Namespace
+    name: helmdeployment
+    status: OutOfSync
+    version: v1
+  - health:
+      status: Healthy
+    kind: Service
+    name: frontend-release
+    namespace: helmdeployment
+    status: Synced
+    version: v1
+  - kind: ServiceAccount
+    name: frontend-release
+    namespace: helmdeployment
+    status: Synced
+    version: v1
+  - group: apps
+    health:
+      message: Deployment "frontend" exceeded its progress deadline
+      status: Degraded
+    kind: Deployment
+    name: frontend
+    namespace: helmdeployment
+    status: Synced
+    version: v1
+  sourceHydrator: {}
+  sourceType: Helm
+  summary:
+    images:
+    - nourbkh/testingprojectfrontend:fe9f820a
+  sync:
+    comparedTo:
+      destination:
+        namespace: helmdeployment
+        server: https://kubernetes.default.svc
+      source:
+        helm:
+          valueFiles:
+          - values-frontend.yaml
+        path: helmTestingP/testingprojectHelm
+        repoURL: https://github.com/NourBkh/k8s-config-repo.git
+        targetRevision: HEAD
+    revision: a6272cec9eebe011fc52c2eaacb701ab21187d88
+    status: OutOfSync
