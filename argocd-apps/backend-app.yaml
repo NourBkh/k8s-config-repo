@@ -9,7 +9,7 @@ metadata:
   uid: f982f570-660d-40cf-8899-cc37a9e49268
 spec:
   destination:
-    namespace: 'helmdeployment '
+    namespace: helmdeployment
     server: https://kubernetes.default.svc
   project: default
   source:
