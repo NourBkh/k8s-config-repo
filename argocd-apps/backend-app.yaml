@@ -9,7 +9,7 @@ metadata:
   uid: f982f570-660d-40cf-8899-cc37a9e49268
 spec:
   destination:
-    namespace: helmdeployment
+    namespace: helmdeployment-backend
     server: https://kubernetes.default.svc
   project: default
   source:
@@ -51,36 +51,36 @@ status:
       - group: ""
         hookPhase: Running
         kind: Namespace
-        message: namespace/helmdeployment unchanged
-        name: helmdeployment
-        namespace: helmdeployment
+        message: namespace/helmdeployment-backend unchanged
+        name: helmdeployment-backend
+        namespace: helmdeployment-backend
         status: Synced
         syncPhase: Sync
         version: v1
       - group: ""
         hookPhase: Failed
         kind: ServiceAccount
-        message: namespaces "helmdeployment " not found
+        message: namespaces "helmdeployment-backend " not found
         name: backend-release
-        namespace: helmdeployment
+        namespace: helmdeployment-backend
         status: SyncFailed
         syncPhase: Sync
         version: v1
       - group: ""
         hookPhase: Failed
         kind: Service
-        message: namespaces "helmdeployment " not found
+        message: namespaces "helmdeployment-backend " not found
         name: backend-release
-        namespace: helmdeployment
+        namespace: helmdeployment-backend
         status: SyncFailed
         syncPhase: Sync
         version: v1
       - group: apps
         hookPhase: Failed
         kind: Deployment
-        message: namespaces "helmdeployment " not found
+        message: namespaces "helmdeployment-backend " not found
         name: backend
-        namespace: helmdeployment
+        namespace: helmdeployment-backend
         status: SyncFailed
         syncPhase: Sync
         version: v1
@@ -95,21 +95,21 @@ status:
   reconciledAt: "2025-04-14T11:05:22Z"
   resources:
   - kind: Namespace
-    name: helmdeployment
+    name: helmdeployment-backend
     status: Synced
     version: v1
   - health:
       status: Missing
     kind: Service
     name: backend-release
-    namespace: helmdeployment
+    namespace: helmdeployment-backend
     status: OutOfSync
     version: v1
   - health:
       status: Missing
     kind: ServiceAccount
     name: backend-release
-    namespace: helmdeployment
+    namespace: helmdeployment-backend
     status: OutOfSync
     version: v1
   - group: apps
@@ -117,7 +117,7 @@ status:
       status: Missing
     kind: Deployment
     name: backend
-    namespace: helmdeployment
+    namespace: helmdeployment-backend
     status: OutOfSync
     version: v1
   sourceHydrator: {}
@@ -126,7 +126,7 @@ status:
   sync:
     comparedTo:
       destination:
-        namespace: helmdeployment
+        namespace: helmdeployment-backend
         server: https://kubernetes.default.svc
       source:
         helm:
