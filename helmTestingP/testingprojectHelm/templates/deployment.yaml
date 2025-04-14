@@ -82,11 +82,3 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      
-      env:
-  - name: MONGO_URI
-    valueFrom:
-      secretKeyRef:
-        name: mongo-secret
-        key: MONGO_URI
-
