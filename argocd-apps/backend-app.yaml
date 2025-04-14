@@ -53,7 +53,7 @@ status:
         kind: Namespace
         message: namespace/helmdeployment unchanged
         name: helmdeployment
-        namespace: 'helmdeployment '
+        namespace: helmdeployment
         status: Synced
         syncPhase: Sync
         version: v1
@@ -62,7 +62,7 @@ status:
         kind: ServiceAccount
         message: namespaces "helmdeployment " not found
         name: backend-release
-        namespace: 'helmdeployment '
+        namespace: helmdeployment
         status: SyncFailed
         syncPhase: Sync
         version: v1
@@ -71,7 +71,7 @@ status:
         kind: Service
         message: namespaces "helmdeployment " not found
         name: backend-release
-        namespace: 'helmdeployment '
+        namespace: helmdeployment
         status: SyncFailed
         syncPhase: Sync
         version: v1
@@ -80,7 +80,7 @@ status:
         kind: Deployment
         message: namespaces "helmdeployment " not found
         name: backend
-        namespace: 'helmdeployment '
+        namespace: helmdeployment
         status: SyncFailed
         syncPhase: Sync
         version: v1
@@ -102,14 +102,14 @@ status:
       status: Missing
     kind: Service
     name: backend-release
-    namespace: 'helmdeployment '
+    namespace: helmdeployment
     status: OutOfSync
     version: v1
   - health:
       status: Missing
     kind: ServiceAccount
     name: backend-release
-    namespace: 'helmdeployment '
+    namespace: helmdeployment
     status: OutOfSync
     version: v1
   - group: apps
@@ -117,7 +117,7 @@ status:
       status: Missing
     kind: Deployment
     name: backend
-    namespace: 'helmdeployment '
+    namespace: helmdeployment
     status: OutOfSync
     version: v1
   sourceHydrator: {}
@@ -126,7 +126,7 @@ status:
   sync:
     comparedTo:
       destination:
-        namespace: 'helmdeployment '
+        namespace: helmdeployment
         server: https://kubernetes.default.svc
       source:
         helm:
