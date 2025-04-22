@@ -5,7 +5,7 @@ replicaCount: 1
 image:
   repository: nourbkh/testingprojectbackend
   pullPolicy: Always
-  tag: "fdc00a93"
+  tag: "1f50cfab"
 
 imagePullSecrets: []
 
