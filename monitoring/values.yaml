@@ -1,0 +1,8 @@
+# Optional overrides for kube-prometheus-stack
+grafana:
+  adminPassword: admin  # you can customize this
+
+prometheus:
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
+

@@ -1,0 +1,10 @@
+apiVersion: v2
+name: monitoring
+description: A Helm chart to deploy Prometheus + Grafana
+version: 0.1.0
+
+dependencies:
+  - name: kube-prometheus-stack
+    version: 56.6.0  # You can use latest stable from Prometheus Community
+    repository: https://prometheus-community.github.io/helm-charts
+
