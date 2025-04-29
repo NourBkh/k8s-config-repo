@@ -1,5 +1,5 @@
 backend:
-  repository: nourbkh/testingproject-backend
+  repository: nourbkh/testingprojectbackend
   pullPolicy: Always
   tag: "7d8db8ad"
   containerPort: 5000
@@ -10,7 +10,7 @@ backend:
 "
 
 frontend:
-  repository: nourbkh/testingproject-frontend
+  repository: nourbkh/testingprojectfrontend
   pullPolicy: Always
   tag: "7d8db8ad"
   containerPort: 3000
