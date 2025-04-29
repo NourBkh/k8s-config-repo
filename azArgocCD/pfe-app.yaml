@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: pfe-app
+  namespace: argocd
+spec:
+  project: pfe
+  source:
+    repoURL: https://github.com/NourBkh/k8s-config-repo.git
+    targetRevision: main
+    path: azHelmDeployment
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: azpfe-app
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+

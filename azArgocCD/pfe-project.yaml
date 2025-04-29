@@ -2,15 +2,13 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: pfe
-  namespace: argocd    # <--- YES! The AppProject itself is created inside the argocd namespace
+  namespace: argocd
 spec:
   description: Project for PFE frontend and backend apps
   sourceRepos:
-    - 'https://your-git-repo-url/K8s-config-repo.git'
+    - 'https://github.com/NourBkh/k8s-config-repo.git'
   destinations:
-    - namespace: azfrontend-app
-      server: https://kubernetes.default.svc
-    - namespace: azbackend-app
+    - namespace: azpfe-app
       server: https://kubernetes.default.svc
   clusterResourceWhitelist:
     - group: '*'
