@@ -1,0 +1,17 @@
+backend:
+  image: nourbkh/testingproject-backend:latest
+  containerPort: 5000
+  servicePort: 5000
+  replicaCount: 1
+  env:
+    MONGO_URI: "mongodb+srv://nourbenkhairia:q679GFKo2oOUZFjd@cluster0.ugpumyv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+"
+
+frontend:
+  image: nourbkh/testingproject-frontend:latest
+  containerPort: 3000
+  servicePort: 80
+  replicaCount: 1
+  env:
+    REACT_APP_API_URL: "http://backend-service:5000"
+
