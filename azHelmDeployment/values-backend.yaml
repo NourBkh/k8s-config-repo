@@ -69,4 +69,7 @@ volumeMounts: []
 nodeSelector: {}
 tolerations: []
 affinity: {}
+mongoSecret:
+  enabled: true
+
 
