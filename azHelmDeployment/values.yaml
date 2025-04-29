@@ -1,5 +1,7 @@
 backend:
-  image: nourbkh/testingproject-backend:latest
+  repository: nourbkh/testingproject-backend
+  pullPolicy: Always
+  tag: "382cce22"
   containerPort: 5000
   servicePort: 5000
   replicaCount: 1
@@ -8,7 +10,9 @@ backend:
 "
 
 frontend:
-  image: nourbkh/testingproject-frontend:latest
+  repository: nourbkh/testingproject-frontend
+  pullPolicy: Always
+  tag: "382cce22"
   containerPort: 3000
   servicePort: 80
   replicaCount: 1
