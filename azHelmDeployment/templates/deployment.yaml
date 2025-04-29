@@ -44,14 +44,15 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
-          {{- if .Values.mongoSecret.enabled }}
-          env:
-            - name: MONGO_URI
-              valueFrom:
-                secretKeyRef:
-                  name: mongo-secret
-                  key: MONGO_URI
-          {{- end }}
+          {{- if and .Values.mongoSecret (hasKey .Values.mongoSecret "enabled") (eq .Values.mongoSecret.enabled true) }}
+env:
+  - name: MONGO_URI
+    valueFrom:
+      secretKeyRef:
+        name: mongo-secret
+        key: MONGO_URI
+{{- end }}
+
           {{- with .Values.livenessProbe }}
           livenessProbe:
             {{- toYaml . | nindent 12 }}
