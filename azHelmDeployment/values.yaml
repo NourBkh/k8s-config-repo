@@ -6,8 +6,7 @@ backend:
   servicePort: 5000
   replicaCount: 1
   env:
-    MONGO_URI: "mongodb+srv://nourbenkhairia:q679GFKo2oOUZFjd@cluster0.ugpumyv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-"
+    MONGO_URI: "mongodb+srv://nourbenkhairia:q679GFKo2oOUZFjd@cluster0.ugpumyv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 frontend:
   repository: nourbkh/testingprojectfrontend
@@ -17,6 +16,5 @@ frontend:
   servicePort: 80
   replicaCount: 1
   env:
-    REACT_APP_API_URL: "http://backend-service.azpfe-app.svc.cluster.local:5000
-"
+    REACT_APP_API_URL: "http://backend-service.azpfe-app.svc.cluster.local:5000"
 
