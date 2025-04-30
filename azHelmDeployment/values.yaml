@@ -16,5 +16,19 @@ frontend:
   servicePort: 80
   replicaCount: 1
   env:
-    REACT_APP_API_URL: "http://backend-service.azpfe-app.svc.cluster.local:5000"
+    REACT_APP_API_URL: "/api"
+    
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+  hosts:
+    - host: ""
+      paths:
+        - path: /api/?(.*)
+          pathType: Prefix
+        - path: /?(.*)
+          pathType: Prefix
+
+
 
