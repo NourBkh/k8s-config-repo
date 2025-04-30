@@ -17,5 +17,6 @@ frontend:
   servicePort: 80
   replicaCount: 1
   env:
-    REACT_APP_API_URL: "http://backend-service:5000"
+    REACT_APP_API_URL: "http://backend-service.azpfe-app.svc.cluster.local:5000
+"
 
