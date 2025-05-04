@@ -9,7 +9,7 @@ metadata:
     {{- end }}
     {{- end }}
 spec:
-  ingressClassName: {{ .Values.ingress.annotations["kubernetes.io/ingress.class"] | default "nginx" | quote }}
+  ingressClassName: {{ index .Values.ingress.annotations "kubernetes.io/ingress.class" | default "nginx" | quote }}
   rules:
     {{- range .Values.ingress.hosts }}
     - host: {{ .host | default "localhost" | quote }}
