@@ -20,9 +20,9 @@ spec:
             pathType: {{ .pathType | default "Prefix" | quote }}
             backend:
               service:
-                name: {{ if eq .path "/api/?(.*)" }}{{ $.Release.Name }}-backend{{ else }}{{ $.Release.Name }}-frontend{{ end }}
+                name: {{ if eq .path "/api" }}{{ $.Release.Name }}-backend{{ else }}{{ $.Release.Name }}-frontend{{ end }}
                 port:
-                  number: {{ if eq .path "/api/?(.*)" }}{{ $.Values.backend.servicePort }}{{ else }}{{ $.Values.frontend.servicePort }}{{ end }}
+                  number: {{ if eq .path "/api" }}{{ $.Values.backend.servicePort }}{{ else }}{{ $.Values.frontend.servicePort }}{{ end }}
           {{- end }}
     {{- end }}
 
