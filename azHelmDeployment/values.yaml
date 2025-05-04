@@ -25,10 +25,11 @@ ingress:
   hosts:
     - host: ""
       paths:
-        - path: /api/?(.*)
+        - path: /api
           pathType: Prefix
-        - path: /?(.*)
+        - path: /
           pathType: Prefix
+
 
 
 
