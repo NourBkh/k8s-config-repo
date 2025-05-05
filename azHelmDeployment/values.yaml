@@ -16,7 +16,7 @@ frontend:
   servicePort: 80
   replicaCount: 1
   env:
-    REACT_APP_API_URL: "/api"
+    REACT_APP_API_URL: "/api/users"
     
 ingress:
   enabled: true
