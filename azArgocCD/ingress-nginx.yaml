@@ -13,7 +13,9 @@ spec:
       values: |
         controller:
           service:
-            loadBalancerIP: "172.210.114.33"
+           annotations:
+              service.beta.kubernetes.io/azure-load-balancer-resource-group: MC_nourResourceGroup_pfecluster_eastus
+           loadBalancerIP: 172.214.68.70  # <- Use one of your available IPs
   destination:
     server: https://kubernetes.default.svc
     namespace: ingress-nginx
