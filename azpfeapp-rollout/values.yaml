@@ -1,0 +1,19 @@
+backend:
+  repository: nourbkh/testingprojectbackend
+  pullPolicy: Always
+  tag: "a039d848"
+  containerPort: 5000
+  servicePort: 5000
+  replicaCount: 1
+  env:
+    MONGO_URI: "mongodb+srv://nourbenkhairia:q679GFKo2oOUZFjd@cluster0.ugpumyv.mongodb.net/mydb?retryWrites=true&w=majority&appName=Cluster0"
+
+frontend:
+  repository: nourbkh/testingprojectfrontend
+  pullPolicy: Always
+  tag: "a039d848"
+  containerPort: 3000
+  servicePort: 80
+  replicaCount: 1
+  env:
+    REACT_APP_API_URL: "/api"
