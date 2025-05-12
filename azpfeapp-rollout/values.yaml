@@ -11,9 +11,9 @@ backend:
 frontend:
   repository: nourbkh/testingprojectfrontend
   pullPolicy: Always
-  tag: "a039d848"
+  tag: "a7311392"
   containerPort: 3000
   servicePort: 80
   replicaCount: 1
   env:
-    REACT_APP_API_URL: "/api"
+    REACT_APP_API_URL: "/api/users/"
