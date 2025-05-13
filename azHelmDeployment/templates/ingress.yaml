@@ -11,9 +11,7 @@ metadata:
 spec:
   ingressClassName: {{ index .Values.ingress.annotations "kubernetes.io/ingress.class" | default "nginx" | quote }}
   rules:
-    
-    
-      http:
+    - http:
         paths:
           - path: /api
             pathType: Prefix
@@ -29,4 +27,3 @@ spec:
                 name: frontend-service
                 port:
                   number: 80
-    {{- end }}
