@@ -6,7 +6,6 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: {{ .Values.ingress.host }}
       http:
         paths:
           - path: /frontend-rollout
