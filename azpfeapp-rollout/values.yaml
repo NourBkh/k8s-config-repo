@@ -20,5 +20,13 @@ frontend:
 
 ingress:
   enabled: true
-  annotations: {}
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+  hosts:
+    - host:
+      paths:
+        - path: /api/users/
+          pathType: Prefix
+        - path: /
+          pathType: Prefix
 
