@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: frontend
+  name: frontend-rollout
 spec:
   replicas: {{ .Values.frontend.replicaCount }}
   selector:
     matchLabels:
-      app: frontend
+      app: frontend-rollout
   template:
     metadata:
       labels:
-        app: frontend
+        app: frontend-rollout
     spec:
       containers:
         - name: frontend
