@@ -9,18 +9,18 @@ spec:
     - host: {{ .Values.ingress.host }}
       http:
         paths:
-          - path: /frontend
+          - path: /frontend-rollout
             pathType: Prefix
             backend:
               service:
-                name: frontend-service
+                name: frontend-rollout-service
                 port:
                   number: 80
-          - path: /backend
+          - path: /backend-rollout
             pathType: Prefix
             backend:
               service:
-                name: backend-service
+                name: backend-rollout-service
                 port:
                   number: 5000
 
