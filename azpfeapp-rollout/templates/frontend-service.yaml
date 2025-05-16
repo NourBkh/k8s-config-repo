@@ -4,7 +4,7 @@ metadata:
   name: frontend-rollout-service
 spec:
   selector:
-    app: frontend
+    app: frontend-rollout
   ports:
     - port: 80
       targetPort: 80
