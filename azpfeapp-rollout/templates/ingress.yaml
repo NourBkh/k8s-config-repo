@@ -2,24 +2,25 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: app-ingress
+  namespace: azpfe-app
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx
   rules:
-      http:
-        paths:
-          - path: /frontend-rollout
-            pathType: Prefix
-            backend:
-              service:
-                name: frontend-rollout-service
-                port:
-                  number: 80
-          - path: /backend-rollout
-            pathType: Prefix
-            backend:
-              service:
-                name: backend-rollout-service
-                port:
-                  number: 5000
-
+  - http:
+      paths:
+      - path: /frontend-rollout
+        pathType: Prefix
+        backend:
+          service:
+            name: frontend-rollout-service
+            port:
+              number: 80
+      - path: /backend-rollout
+        pathType: Prefix
+        backend:
+          service:
+            name: backend-rollout-service
+            port:
+              number: 5000
