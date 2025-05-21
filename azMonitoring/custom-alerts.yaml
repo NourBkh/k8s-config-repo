@@ -10,7 +10,7 @@ spec:
   - name: custom.rules
     rules:
     - alert: HighPodCPUUsage
-      expr: rate(container_cpu_usage_seconds_total{container!="", pod!=""}[2m]) > 0.8
+      expr: rate(container_cpu_usage_seconds_total{container!="", pod!=""}[2m]) > 0.01
       for: 2m
       labels:
         severity: warning
