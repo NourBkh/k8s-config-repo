@@ -26,5 +26,5 @@ stringData:
           - send_resolved: true
             channel: '#alerts'
             username: 'PrometheusBot'
-            api_url: 'https://hooks.slack.com/services/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'
+            api_url: 'https://hooks.slack.com/services/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'
 
