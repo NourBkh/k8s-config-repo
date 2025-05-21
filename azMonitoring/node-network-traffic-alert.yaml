@@ -1,0 +1,20 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: node-network-traffic-alert
+  namespace: monitoring
+  labels:
+    release: prometheus-stack
+spec:
+  groups:
+  - name: node-network.rules
+    rules:
+    - alert: NodeHighNetworkTraffic
+      expr: rate(node_network_receive_bytes_total[5m]) > 1000000
+      for: 3m
+      labels:
+        severity: warning
+      annotations:
+        summary: "Node {{ $labels.instance }} has high incoming network traffic"
+        description: "Node network traffic exceeds 1MB/s over the last 5 minutes."
+

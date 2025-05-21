@@ -1,0 +1,20 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: kube-apiserver-down-alert
+  namespace: monitoring
+  labels:
+    release: prometheus-stack
+spec:
+  groups:
+  - name: kube-apiserver.rules
+    rules:
+    - alert: KubeAPIServerDown
+      expr: up{job="apiserver"} == 0
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: "Kubernetes API server is down"
+        description: "Prometheus failed to scrape the Kubernetes API server for 1 minute."
+
