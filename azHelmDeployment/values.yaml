@@ -5,8 +5,8 @@ backend:
   containerPort: 5000
   servicePort: 5000
   replicaCount: 1
-  env:
-    MONGO_URI: ""
+  
+    
 
 frontend:
   repository: nourbkh/testingprojectfrontend
