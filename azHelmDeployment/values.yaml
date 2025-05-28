@@ -5,8 +5,8 @@ backend:
   containerPort: 5000
   servicePort: 5000
   replicaCount: 1
-  
-    
+  env:
+    MONGO_URI: "mongodb+srv://nourbenkhairia:q679GFKo2oOUZFjd@cluster0.ugpumyv.mongodb.net/mydb?retryWrites=true&w=majority&appName=Cluster0"
 
 frontend:
   repository: nourbkh/testingprojectfrontend
