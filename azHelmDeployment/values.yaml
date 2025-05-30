@@ -1,7 +1,7 @@
 backend:
   repository: nourbkh/testingprojectbackend
   pullPolicy: Always
-  tag: "e678c4f3"
+  tag: "df947ba0"
   containerPort: 5000
   servicePort: 5000
   replicaCount: 1
@@ -11,7 +11,7 @@ backend:
 frontend:
   repository: nourbkh/testingprojectfrontend
   pullPolicy: Always
-  tag: "e678c4f3"
+  tag: "df947ba0"
   containerPort: 3000
   servicePort: 80
   replicaCount: 1
